@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 export const Progress = () => {
     const [progress, setprogress] = useState({ paid: 100, process: 30, payment: 10 })
+    const [prog, setprog] = useState({ paid: 100, process: 30, payment: 10 })
     const [data, setData] = useState({ balance: 20000, processing: 30, available: 65000 })
     const dragProgress = (e) => {
         console.log(e.target.getAttribute("class"))
@@ -39,7 +40,7 @@ export const Progress = () => {
                             </div>
                             {progress.process}%
                         </div>
-                        <span className="paid">{100 - (progress.process + progress.payment)}%</span>
+                        {progress.process + progress.payment <= 100 ? <span className="paid">{100 - (progress.process + progress.payment)}%</span> : <span className="paid">0%</span>}
                     </div>
                     {progress.payment <= 50 && <div className="status mt-3">
                         <p>Payments Due : $5000 <span className="paymentBox"></span></p>
@@ -61,8 +62,8 @@ export const Progress = () => {
                 </div>
                 <div className="col">
                     <div className="paidprogress">
-                        <div className="procprogress" style={{ width: `${progress.process}%` }}>
-                            <div className="paymentprogress" style={{ width: `${progress.payment}%` }}>
+                        <div className="procprogress" style={{ width: `${prog.process}%` }}>
+                            <div className="paymentprogress" style={{ width: `${prog.payment}%` }}>
 
                             </div>
                         </div>
