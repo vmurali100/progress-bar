@@ -39,13 +39,25 @@ export const Progress = () => {
                             </div>
                             {progress.process}%
                         </div>
-                        <span className="paid">{progress.process + progress.payment}%</span>
+                        <span className="paid">{100 - (progress.process + progress.payment)}%</span>
                     </div>
-                    <div className="status mt-3">
-                        <p>Payments Due <span className="paymentBox"></span></p>
-                        <p>Processing <span className="procesBox"></span></p>
-                        <p>Paid <span className="paidBox"></span></p>
-                    </div>
+                    {progress.payment <= 50 && <div className="status mt-3">
+                        <p>Payments Due : $5000 <span className="paymentBox"></span></p>
+                        <p>Processing : $15000<span className="procesBox"></span></p>
+                        <p>Paid : $15000<span className="paidBox"></span></p>
+                    </div>}
+
+                    {progress.payment >= 51 && progress.payment <= 70 && <div className="status mt-3">
+                        <p>Payments Due : $8000 <span className="paymentBox"></span></p>
+                        <p>Processing : $16000<span className="procesBox"></span></p>
+                        <p>Paid : $22000<span className="paidBox"></span></p>
+                    </div>}
+
+                    {progress.payment >= 71 && progress.payment <= 100 && <div className="status mt-3">
+                        <p>Payments Due : $7000 <span className="paymentBox"></span></p>
+                        <p>Processing : $17000<span className="procesBox"></span></p>
+                        <p>Paid : $24000<span className="paidBox"></span></p>
+                    </div>}
                 </div>
                 <div className="col">
                     <div className="paidprogress">
