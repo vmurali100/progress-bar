@@ -1,0 +1,57 @@
+h1, p {
+  font-family: Lato;
+}
+.bg-dark {
+  background-color: #545859!important;
+}
+.paidprogress{
+  height: 40px;
+    background: #ECEBEA;
+    border-radius: 30px;
+    position: relative;
+}
+.procprogress{
+  height: 40px;
+  background: #64A70B;
+  border-radius: 30px;
+  text-align: right;
+  color: white;
+  line-height: 2.3;
+  padding-right: 4px;
+    cursor: pointer;
+   
+}
+.paymentprogress{
+  height: 40px;
+  background: #00C0F3;
+  border-radius: 30px;
+  line-height: 2.2;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+}
+
+.paid{
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
+.paymentBox,.procesBox,.paidBox{
+  width: 10px;
+  height: 10px;
+  background: #00C0F3;
+  position: absolute;
+  border-radius: 50%;
+  left: 222px;
+  top: 127px;
+}
+.procesBox{
+  top: 168px;
+  background: #64A70B;
+}
+.paidBox{
+  top: 208px;
+  background: #ECEBEA;
+}
+
